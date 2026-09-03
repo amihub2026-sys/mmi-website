@@ -10,164 +10,365 @@
     </head>
     <body>
         <div data-header></div>
-        <section class="hero">
-            <article class="hero-slide active">
-                <img class="hero-bg" src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1900&q=90" alt="Boxing training">
-                <div class="container hero-content">
-                    <div class="hero-kicker">Discipline. Strength. Victory.</div>
-                    <h1>Train Hard.
-                        <span>Fight Strong.</span>
-                    </h1>
-                    <p>Professional combat sports coaching for beginners, fitness members and competitive athletes in a safe, energetic environment.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="contact.html">Start Free Trial
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a class="btn btn-outline" href="programs.html">
-                            <i class="fa-solid fa-play"></i> Explore Programs
-                        </a>
-                    </div>
-                </div>
+
+
+
+        <section class="cinema-hero" id="cinemaHero">
+
+    <div class="cinema-sticky">
+
+        <!-- SCROLL-CONTROLLED VIDEO -->
+        <video
+            class="cinema-video"
+            id="cinemaVideo"
+            muted
+            playsinline
+            preload="auto"
+            poster="assets/images/hero-poster.jpg">
+
+            <source
+                src="assets/videos/mii-fighting-hero.mp4"
+                type="video/mp4">
+        </video>
+
+        <!-- CINEMATIC OVERLAYS -->
+        <div class="cinema-shade"></div>
+        <div class="cinema-vignette"></div>
+        <div class="cinema-grain"></div>
+
+        <!-- 01: MMA + KUDO -->
+        <div class="cinema-copy position-right active" data-scene="0">
+            <span class="scene-number">01 / 08</span>
+
+            <div class="scene-discipline">
+                MMA <span>×</span> KUDO
+            </div>
+
+            <h1>
+                ADAPT. CONTROL.
+                <strong>DOMINATE.</strong>
+            </h1>
+
+            <p>
+                Complete combat training that develops striking,
+                takedowns, ground control and real fighting confidence.
+            </p>
+
+            <div class="hero-actions">
+                <a href="contact.html" class="btn btn-primary">
+                    START TRAINING
+                </a>
+
+                <a href="programs.html" class="btn btn-glass">
+                    EXPLORE PROGRAMS
+                </a>
+            </div>
+        </div>
+
+        <!-- 02: BOXING -->
+        <div class="cinema-copy position-left" data-scene="1">
+            <span class="scene-number">02 / 08</span>
+
+            <div class="scene-discipline">BOXING</div>
+
+            <h2>
+                PRECISION IN
+                <strong>EVERY PUNCH.</strong>
+            </h2>
+
+            <p>
+                Develop sharp combinations, defensive movement,
+                explosive power and elite conditioning.
+            </p>
+        </div>
+
+        <!-- 03: KICKBOXING + MUAY THAI -->
+        <div class="cinema-copy position-left" data-scene="2">
+            <span class="scene-number">03 / 08</span>
+
+            <div class="scene-discipline">
+                KICKBOXING <span>×</span> MUAY THAI
+            </div>
+
+            <h2>
+                STRIKE WITH
+                <strong>POWER.</strong>
+            </h2>
+
+            <p>
+                Master punches, kicks, knees, elbows and powerful
+                combinations through professional pad training.
+            </p>
+        </div>
+
+        <!-- 04: BJJ -->
+        <div class="cinema-copy position-right" data-scene="3">
+            <span class="scene-number">04 / 08</span>
+
+            <div class="scene-discipline">
+                BRAZILIAN JIU-JITSU
+            </div>
+
+            <h2>
+                CONTROL BEYOND
+                <strong>STRENGTH.</strong>
+            </h2>
+
+            <p>
+                Learn takedowns, positional control, escapes and
+                submissions through technique and strategy.
+            </p>
+        </div>
+
+        <!-- 05: KARATE -->
+        <div class="cinema-copy position-right" data-scene="4">
+            <span class="scene-number">05 / 08</span>
+
+            <div class="scene-discipline">KARATE</div>
+
+            <h2>
+                DISCIPLINE BECOMES
+                <strong>POWER.</strong>
+            </h2>
+
+            <p>
+                Strengthen your focus, coordination, technique and
+                character through traditional martial arts training.
+            </p>
+        </div>
+
+        <!-- 06: TAEKWONDO -->
+        <div class="cinema-copy position-right" data-scene="5">
+            <span class="scene-number">06 / 08</span>
+
+            <div class="scene-discipline">TAEKWONDO</div>
+
+            <h2>
+                SPEED. BALANCE.
+                <strong>ACCURACY.</strong>
+            </h2>
+
+            <p>
+                Build flexibility, explosive kicking ability,
+                balance and complete body control.
+            </p>
+        </div>
+
+        <!-- 07: KENJUTSU -->
+        <div class="cinema-copy position-left" data-scene="6">
+            <span class="scene-number">07 / 08</span>
+
+            <div class="scene-discipline">KENJUTSU</div>
+
+            <h2>
+                THE WAY OF
+                <strong>THE SWORD.</strong>
+            </h2>
+
+            <p>
+                Develop concentration, timing, controlled movement
+                and respect through Japanese sword training.
+            </p>
+        </div>
+
+        <!-- 08: KRAV MAGA -->
+        <div class="cinema-copy position-left" data-scene="7">
+            <span class="scene-number">08 / 08</span>
+
+            <div class="scene-discipline">KRAV MAGA</div>
+
+            <h2>
+                READY FOR
+                <strong>REAL LIFE.</strong>
+            </h2>
+
+            <p>
+                Build awareness, confidence and practical
+                self-defence skills for real-world situations.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary final-button">
+                BOOK YOUR FIRST CLASS
+            </a>
+        </div>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="cinema-scroll">
+            <span>SCROLL TO EXPERIENCE</span>
+            <div class="scroll-line">
+                <div class="scroll-progress" id="scrollProgress"></div>
+            </div>
+        </div>
+
+        <!-- SCENE INDICATORS -->
+        <div class="cinema-dots" aria-hidden="true">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+       <section class="section">
+    <div class="container grid about-grid">
+        <div class="about-visual reveal-left">
+            <img class="about-main"
+                src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1000&q=85"
+                alt="Martial arts training at MII Academy">
+
+            <img class="about-small float"
+                src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=700&q=85"
+                alt="Professional combat sports training">
+
+            <div class="experience-badge">
+                <strong>15+</strong>
+                <span>Martial Arts Programs</span>
+            </div>
+        </div>
+
+        <div class="reveal-right">
+            <div class="eyebrow">About MII Academy</div>
+
+            <h2 class="section-title">
+                Train Strong. Fight Smart. Live Confident.
+            </h2>
+
+            <p class="section-copy">
+                MII Fighting Training Academy provides professional coaching in
+                MMA, KUDO, Boxing, Kickboxing, Muay Thai, Brazilian Jiu-Jitsu,
+                Karate, Taekwondo, Kenjutsu and Krav Maga. Our structured training
+                develops strength, discipline, confidence and practical self-defence
+                skills for students of all levels.
+            </p>
+
+            <ul class="check-list">
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Professional martial arts instructors
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Safe and disciplined training environment
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Training for beginners and advanced students
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Fitness, self-defence and competition preparation
+                </li>
+            </ul>
+
+            <a class="btn btn-dark" href="about.html">
+                Discover Our Academy
+            </a>
+        </div>
+    </div>
+</section>
+
+      <section class="section soft">
+    <div class="container">
+        <div class="eyebrow">Our Classes</div>
+        <h2 class="section-title">Train. Learn. Evolve.</h2>
+
+        <p class="section-copy">
+            Choose a discipline, build the foundation and progress through
+            structured levels under expert guidance.
+        </p>
+
+        <div class="grid class-grid">
+
+            <!-- MMA -->
+            <article
+                class="class-card reveal"
+                style="--card-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=900&q=85');">
+
+                <i class="fa-solid fa-hand-fist"></i>
+                <h3>MMA</h3>
+
+                <p>
+                    Complete mixed martial arts training covering striking,
+                    wrestling, takedowns and submissions.
+                </p>
+
+                <a class="text-link" href="programs.html">
+                    Learn More →
+                </a>
             </article>
-            <article class="hero-slide">
-                <img class="hero-bg" src="https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=1900&q=90" alt="Martial arts">
-                <div class="container hero-content">
-                    <div class="hero-kicker">Build Your Best Version</div>
-                    <h1>Master Focus.
-                        <span>Own The Fight.</span>
-                    </h1>
-                    <p>Structured programs combining technique, conditioning, confidence and real-world self-defence for every age and ability.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="programs.html">Choose Your Program</a>
-                        <a class="btn btn-outline" href="schedule.html">View Schedule</a>
-                    </div>
-                </div>
+
+            <!-- Boxing -->
+            <article
+                class="class-card reveal"
+                style="--card-image: url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85');">
+
+                <i class="fa-solid fa-mitten"></i>
+                <h3>Boxing</h3>
+
+                <p>
+                    Develop sharp technique, footwork, speed, power,
+                    defence and elite cardiovascular conditioning.
+                </p>
+
+                <a class="text-link" href="programs.html">
+                    Learn More →
+                </a>
             </article>
-            <article class="hero-slide">
-                <img class="hero-bg" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1900&q=90" alt="Fitness athlete">
-                <div class="container hero-content">
-                    <div class="hero-kicker">Every Level Is Welcome</div>
-                    <h1>Stronger Body.
-                        <span>Stronger Mind.</span>
-                    </h1>
-                    <p>Transform your fitness with expert coaching, modern facilities and a supportive fight family that keeps you progressing.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="contact.html">Book Assessment</a>
-                        <a class="btn btn-outline" href="about.html">Meet The Academy</a>
-                    </div>
-                </div>
+
+            <!-- Kickboxing -->
+            <article
+                class="class-card reveal"
+                style="--card-image: url('https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=900&q=85');">
+
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Kickboxing</h3>
+
+                <p>
+                    High-energy striking sessions combining punches,
+                    kicks, knees, movement and pad work.
+                </p>
+
+                <a class="text-link" href="programs.html">
+                    Learn More →
+                </a>
             </article>
-            <div class="hero-dots">
-                <button class="hero-dot active"></button>
-                <button class="hero-dot"></button>
-                <button class="hero-dot"></button>
-            </div>
-            <div class="hero-bottom">
-                <div class="container feature-strip">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
-                        <div>
-                            <strong>Expert Coaches</strong>
-                            <small>Certified & experienced</small>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-dumbbell"></i>
-                        </div>
-                        <div>
-                            <strong>Modern Facility</strong>
-                            <small>World-class equipment</small>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-                        <div>
-                            <strong>All Levels</strong>
-                            <small>Beginner to advanced</small>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <div>
-                            <strong>Real Results</strong>
-                            <small>Fitness, focus, confidence</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container grid about-grid">
-                <div class="about-visual reveal-left">
-                    <img class="about-main" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1000&q=85" alt="Academy training">
-                    <img class="about-small float" src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=700&q=85" alt="Fight training">
-                    <div class="experience-badge">
-                        <strong>10+</strong>
-                        <span>Years Excellence</span>
-                    </div>
-                </div>
-                <div class="reveal-right">
-                    <div class="eyebrow">About MII Academy</div>
-                    <h2 class="section-title">Building Warriors On And Off The Mat</h2>
-                    <p class="section-copy">MII Fighting Training Academy delivers high-quality martial arts, combat fitness and self-defence coaching with a strong focus on technique, safety and personal growth.</p>
-                    <ul class="check-list">
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i> Certified professional coaches
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i> Safe, motivating environment
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i> Flexible morning and evening batches
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i> Personal progress tracking
-                        </li>
-                    </ul>
-                    <a class="btn btn-dark" href="about.html">Discover Our Story</a>
-                </div>
-            </div>
-        </section>
-        <section class="section soft">
-            <div class="container">
-                <div class="eyebrow">Our Classes</div>
-                <h2 class="section-title">Train. Learn. Evolve.</h2>
-                <p class="section-copy">Choose a discipline, build the foundation and progress through structured levels under expert guidance.</p>
-                <div class="grid class-grid">
-                    <article class="class-card reveal">
-                        <i class="fa-solid fa-hand-fist"></i>
-                        <h3>MMA</h3>
-                        <p>Complete mixed martial arts training covering striking, wrestling, takedowns and submissions.</p>
-                        <a class="text-link" href="programs.html">Learn More →</a>
-                    </article>
-                    <article class="class-card reveal">
-                        <i class="fa-solid fa-mitten"></i>
-                        <h3>Boxing</h3>
-                        <p>Develop sharp technique, footwork, speed, power, defence and elite cardiovascular conditioning.</p>
-                        <a class="text-link" href="programs.html">Learn More →</a>
-                    </article>
-                    <article class="class-card reveal">
-                        <i class="fa-solid fa-bolt"></i>
-                        <h3>Kickboxing</h3>
-                        <p>High-energy striking sessions combining punches, kicks, knees, movement and pad work.</p>
-                        <a class="text-link" href="programs.html">Learn More →</a>
-                    </article>
-                    <article class="class-card reveal">
-                        <i class="fa-solid fa-people-roof"></i>
-                        <h3>Kids Martial Arts</h3>
-                        <p>Age-appropriate classes that develop discipline, confidence, coordination and anti-bullying skills.</p>
-                        <a class="text-link" href="programs.html">Learn More →</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+
+            <!-- Kids Martial Arts -->
+            <article
+                class="class-card reveal"
+                style="--card-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=900&q=85');">
+
+                <i class="fa-solid fa-people-roof"></i>
+                <h3>Kids Martial Arts</h3>
+
+                <p>
+                    Age-appropriate classes that develop discipline,
+                    confidence, coordination and anti-bullying skills.
+                </p>
+
+                <a class="text-link" href="programs.html">
+                    Learn More →
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
         <section class="section dark">
             <div class="container">
                 <div class="eyebrow">Goal-Based Programs</div>
@@ -200,64 +401,99 @@
                 </div>
             </div>
         </section>
-        <section class="split-dark">
-            <div class="split-image" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85')"></div>
-            <div class="split-content">
-                <div class="eyebrow">Why Train With Us</div>
-                <h2 class="section-title">More Than A Workout</h2>
-                <p class="section-copy">Every session is designed to improve physical capability, mental resilience and practical skill.</p>
-                <div class="benefit-list">
-                    <div class="benefit reveal">
-                        <div class="benefit-number">01</div>
-                        <div>
-                            <h4>Structured Coaching</h4>
-                            <p>Clear progressions and measurable goals for beginners through competitors.</p>
-                        </div>
-                    </div>
-                    <div class="benefit reveal">
-                        <div class="benefit-number">02</div>
-                        <div>
-                            <h4>Positive Community</h4>
-                            <p>Train with respectful, motivated people who support your journey.</p>
-                        </div>
-                    </div>
-                    <div class="benefit reveal">
-                        <div class="benefit-number">03</div>
-                        <div>
-                            <h4>Safe Intensity</h4>
-                            <p>Challenging sessions delivered with correct technique and safety standards.</p>
-                        </div>
-                    </div>
-                    <div class="benefit reveal">
-                        <div class="benefit-number">04</div>
-                        <div>
-                            <h4>Total Transformation</h4>
-                            <p>Build strength, stamina, confidence, focus and self-discipline.</p>
-                        </div>
-                    </div>
+
+       <section class="split-dark">
+    <div
+        class="split-image"
+        style="background-image: url('https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=1200&q=85');">
+    </div>
+
+    <div class="split-content">
+        <div class="eyebrow">Why Choose MII Academy</div>
+
+        <h2 class="section-title">More Than A Workout</h2>
+
+        <p class="section-copy">
+            Every training session develops physical strength, practical
+            fighting skills, mental resilience and lasting self-confidence.
+        </p>
+
+        <div class="benefit-list">
+            <div class="benefit reveal">
+                <div class="benefit-number">01</div>
+
+                <div>
+                    <h4>Structured Coaching</h4>
+                    <p>
+                        Step-by-step training programs designed for beginners,
+                        advanced students and competitive fighters.
+                    </p>
                 </div>
             </div>
-        </section>
-        <section class="counter-section">
-            <div class="container grid counter-grid">
-                <div class="counter">
-                    <strong data-count="500" data-suffix="+">0</strong>
-                    <span>Active Members</span>
-                </div>
-                <div class="counter">
-                    <strong data-count="20" data-suffix="+">0</strong>
-                    <span>Expert Coaches</span>
-                </div>
-                <div class="counter">
-                    <strong data-count="10" data-suffix="+">0</strong>
-                    <span>Years Experience</span>
-                </div>
-                <div class="counter">
-                    <strong data-count="100" data-suffix="+">0</strong>
-                    <span>Medals & Wins</span>
+
+            <div class="benefit reveal">
+                <div class="benefit-number">02</div>
+
+                <div>
+                    <h4>Expert Instructors</h4>
+                    <p>
+                        Learn correct techniques across multiple martial arts
+                        disciplines under professional guidance.
+                    </p>
                 </div>
             </div>
-        </section>
+
+            <div class="benefit reveal">
+                <div class="benefit-number">03</div>
+
+                <div>
+                    <h4>Safety-First Training</h4>
+                    <p>
+                        Train with controlled intensity, proper technique and
+                        safety standards at every level.
+                    </p>
+                </div>
+            </div>
+
+            <div class="benefit reveal">
+                <div class="benefit-number">04</div>
+
+                <div>
+                    <h4>Complete Development</h4>
+                    <p>
+                        Build strength, stamina, discipline, confidence,
+                        concentration and practical self-defence skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <section class="counter-section">
+    <div class="container grid counter-grid">
+        <div class="counter">
+            <strong data-count="500" data-suffix="+">0</strong>
+            <span>Students Trained</span>
+        </div>
+
+        <div class="counter">
+            <strong data-count="20" data-suffix="+">0</strong>
+            <span>Professional Coaches</span>
+        </div>
+
+        <div class="counter">
+            <strong data-count="10" data-suffix="+">0</strong>
+            <span>Years of Excellence</span>
+        </div>
+
+        <div class="counter">
+            <strong data-count="100" data-suffix="+">0</strong>
+            <span>Medals & Achievements</span>
+        </div>
+    </div>
+</section>
+
         <section class="section">
             <div class="container">
                 <div class="eyebrow">Our Coaches</div>
@@ -334,6 +570,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section soft">
             <div class="container">
                 <div class="eyebrow">Testimonials</div>
@@ -396,7 +633,8 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+
+        <!-- <section class="section">
             <div class="container">
                 <div class="eyebrow">Latest Insights</div>
                 <h2 class="section-title">Training Journal</h2>
@@ -433,7 +671,8 @@
                     </article>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <section class="cta">
             <div class="container cta-inner">
                 <div>
@@ -443,6 +682,7 @@
                 <a class="btn btn-primary" href="contact.html">Claim Your Free Trial</a>
             </div>
         </section>
+
         <div data-footer></div>
         <script src="assets/js/components.js"></script>
         <script src="assets/js/main.js"></script>

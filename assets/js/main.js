@@ -76,3 +76,166 @@ if (tbody) renderSchedule('monday');
 
 // form demo
 document.querySelectorAll('form').forEach(form => form.addEventListener('submit', e => { e.preventDefault(); alert('Thank you! Your request has been received. The academy team will contact you shortly.'); form.reset() }));
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.getElementById("cinemaHero");
+    const video = document.getElementById("cinemaVideo");
+    const sceneContents = Array.from(
+        document.querySelectorAll(".cinema-copy")
+    );
+    const sceneDots = Array.from(
+        document.querySelectorAll(".cinema-dots span")
+    );
+    const scrollProgress = document.getElementById("scrollProgress");
+
+    if (!hero || !video || sceneContents.length === 0) {
+        return;
+    }
+
+    let videoDuration = 8;
+    let activeScene = -1;
+    let ticking = false;
+
+    /*
+     * Adjust these values if the generated video cuts
+     * are not exactly one second apart.
+     */
+    const sceneTimes = [
+        0.15, // MMA + KUDO
+        1.15, // Boxing
+        2.15, // Kickboxing + Muay Thai
+        3.15, // Brazilian Jiu-Jitsu
+        4.15, // Karate
+        5.15, // Taekwondo
+        6.15, // Kenjutsu
+        7.15  // Krav Maga
+    ];
+
+    const clamp = (number, minimum, maximum) => {
+        return Math.min(Math.max(number, minimum), maximum);
+    };
+
+    function activateScene(index) {
+        if (index === activeScene) {
+            return;
+        }
+
+        activeScene = index;
+
+        sceneContents.forEach((content, contentIndex) => {
+            content.classList.toggle(
+                "active",
+                contentIndex === activeScene
+            );
+        });
+
+        sceneDots.forEach((dot, dotIndex) => {
+            dot.classList.toggle(
+                "active",
+                dotIndex === activeScene
+            );
+        });
+    }
+
+    function updateHero() {
+        const heroRect = hero.getBoundingClientRect();
+        const scrollableDistance =
+            hero.offsetHeight - window.innerHeight;
+
+        const travelledDistance = clamp(
+            -heroRect.top,
+            0,
+            scrollableDistance
+        );
+
+        const progress = scrollableDistance > 0
+            ? travelledDistance / scrollableDistance
+            : 0;
+
+        /*
+         * Select one of the eight video scenes.
+         */
+        const sceneIndex = Math.min(
+            Math.floor(progress * sceneContents.length),
+            sceneContents.length - 1
+        );
+
+        activateScene(sceneIndex);
+
+        /*
+         * Move smoothly inside the selected one-second scene.
+         */
+        const sceneProgress =
+            (progress * sceneContents.length) - sceneIndex;
+
+        const currentSceneTime = sceneTimes[sceneIndex];
+
+        const nextSceneTime =
+            sceneIndex < sceneTimes.length - 1
+                ? sceneTimes[sceneIndex + 1]
+                : Math.max(videoDuration - 0.08, currentSceneTime);
+
+        const targetTime =
+            currentSceneTime +
+            ((nextSceneTime - currentSceneTime) * sceneProgress);
+
+        if (
+            video.readyState >= 2 &&
+            Number.isFinite(targetTime)
+        ) {
+            video.currentTime = clamp(
+                targetTime,
+                0,
+                videoDuration - 0.04
+            );
+        }
+
+        if (scrollProgress) {
+            scrollProgress.style.width =
+                `${progress * 100}%`;
+        }
+
+        ticking = false;
+    }
+
+    function requestHeroUpdate() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHero);
+            ticking = true;
+        }
+    }
+
+    video.addEventListener("loadedmetadata", () => {
+        if (Number.isFinite(video.duration)) {
+            videoDuration = video.duration;
+        }
+
+        video.pause();
+        video.currentTime = sceneTimes[0];
+        activateScene(0);
+        requestHeroUpdate();
+    });
+
+    /*
+     * Prevent normal playback because scrolling controls it.
+     */
+    video.addEventListener("play", () => {
+        video.pause();
+    });
+
+    window.addEventListener("scroll", requestHeroUpdate, {
+        passive: true
+    });
+
+    window.addEventListener("resize", requestHeroUpdate);
+
+    activateScene(0);
+    requestHeroUpdate();
+});
