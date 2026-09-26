@@ -5445,3 +5445,175 @@ textarea.form-control {
     }
 
 }
+@media (max-width: 768px) {
+
+  .section {
+    padding: 50px 16px;
+  }
+
+  .section .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 38px;
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+
+  .class-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .class-card {
+    padding: 24px 18px;
+    min-height: auto;
+    height: auto;
+  }
+
+  .class-card i {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .class-card h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .class-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+/* =========================================
+   MOBILE - NORMAL VIDEO, NO SCROLL EFFECT
+========================================= */
+
+@media (max-width: 600px) {
+
+    .cinema-hero {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #000;
+    }
+
+    .cinema-sticky {
+        position: relative !important;
+        top: auto !important;
+
+        width: 100%;
+        height: auto !important;
+        min-height: auto !important;
+
+        overflow: visible !important;
+        background: #000;
+    }
+
+    /* VIDEO */
+    .cinema-video {
+        position: relative !important;
+        inset: auto !important;
+
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+
+        object-fit: cover !important;
+        object-position: center !important;
+
+        display: block;
+        transform: none !important;
+        filter: none;
+        background: #000;
+        cursor: pointer;
+    }
+
+    /* Remove cinematic overlays on mobile */
+    .cinema-shade,
+    .cinema-vignette,
+    .cinema-grain {
+        display: none !important;
+    }
+
+    /* CONTENT */
+    .cinema-copy,
+    .cinema-copy.position-left,
+    .cinema-copy.position-right {
+        position: relative !important;
+
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 30px 20px !important;
+        margin: 0 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+
+        background: #070707;
+        color: #fff;
+
+        pointer-events: auto !important;
+    }
+
+    /* Hide every scene except first one */
+    .cinema-copy:not([data-scene="0"]) {
+        display: none !important;
+    }
+
+    .cinema-copy::before {
+        display: none !important;
+    }
+
+    .cinema-copy h1,
+    .cinema-copy h2 {
+        max-width: 100%;
+
+        font-size: 42px;
+        line-height: .95;
+    }
+
+    .cinema-copy p {
+        max-width: 100%;
+
+        margin-top: 14px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    /* No scroll indicator */
+    .cinema-scroll,
+    .cinema-dots {
+        display: none !important;
+    }
+}
