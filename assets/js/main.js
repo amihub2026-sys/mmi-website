@@ -239,3 +239,136 @@ document.addEventListener("DOMContentLoaded", () => {
     activateScene(0);
     requestHeroUpdate();
 });
+/* =========================================
+   CINEMA SCROLL VIDEO
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hero = document.getElementById("cinemaHero");
+    const video = document.getElementById("cinemaVideo");
+
+    const copies = document.querySelectorAll(".cinema-copy");
+    const dots = document.querySelectorAll(".cinema-dots span");
+    const progressBar = document.getElementById("scrollProgress");
+
+    if (!hero || !video) return;
+
+    let duration = 0;
+    let ticking = false;
+
+    video.muted = true;
+    video.playsInline = true;
+    video.pause();
+
+    video.addEventListener("loadedmetadata", function () {
+
+        duration = video.duration;
+
+        // show first frame
+        try {
+            video.currentTime = 0.01;
+        } catch (e) {}
+
+        updateCinema();
+    });
+
+    video.addEventListener("canplay", function () {
+        updateCinema();
+    });
+
+    function updateCinema() {
+
+        if (!duration || !isFinite(duration)) return;
+
+        const heroRect = hero.getBoundingClientRect();
+
+        const totalScroll =
+            hero.offsetHeight - window.innerHeight;
+
+        const currentScroll =
+            Math.min(
+                Math.max(-heroRect.top, 0),
+                totalScroll
+            );
+
+        const progress =
+            totalScroll > 0
+                ? currentScroll / totalScroll
+                : 0;
+
+        /* VIDEO FRAME */
+
+        const targetTime =
+            Math.min(
+                duration - 0.05,
+                progress * duration
+            );
+
+        if (Math.abs(video.currentTime - targetTime) > 0.03) {
+            video.currentTime = targetTime;
+        }
+
+        /* 8 SCENES */
+
+        const totalScenes = copies.length;
+
+        let sceneIndex =
+            Math.floor(progress * totalScenes);
+
+        sceneIndex = Math.min(
+            sceneIndex,
+            totalScenes - 1
+        );
+
+        copies.forEach((copy, index) => {
+            copy.classList.toggle(
+                "active",
+                index === sceneIndex
+            );
+        });
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle(
+                "active",
+                index === sceneIndex
+            );
+        });
+
+        /* PROGRESS LINE */
+
+        if (progressBar) {
+            progressBar.style.width =
+                `${progress * 100}%`;
+        }
+    }
+
+    function onScroll() {
+
+        if (!ticking) {
+
+            requestAnimationFrame(() => {
+
+                updateCinema();
+
+                ticking = false;
+
+            });
+
+            ticking = true;
+        }
+    }
+
+    window.addEventListener(
+        "scroll",
+        onScroll,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        updateCinema
+    );
+
+    video.load();
+});
