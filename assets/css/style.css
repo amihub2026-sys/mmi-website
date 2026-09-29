@@ -5617,3 +5617,688 @@ textarea.form-control {
         display: none !important;
     }
 }
+/* =========================================================
+   DR. MAHA PRABHU SECTION
+   THEME: BLACK + WHITE + RED
+========================================================= */
+
+.maha-profile-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 24px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(230, 24, 35, 0.035),
+            transparent 32%
+        ),
+        #0b0b0b;
+}
+
+.maha-profile-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1250px, 90%);
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(230, 24, 35, 0.7),
+        transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.maha-profile-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1380px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.78fr 1.15fr 0.95fr;
+    gap: 42px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.maha-profile-image-wrap {
+    width: 100%;
+}
+
+.maha-profile-image-card {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+
+    border-radius: 10px;
+    background: #111;
+    border: 1px solid #242424;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.maha-profile-image-card::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    width: 58px;
+    height: 4px;
+
+    background: #e61823;
+    z-index: 5;
+}
+
+.maha-profile-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: transform .5s ease;
+}
+
+.maha-profile-image-card:hover .maha-profile-image {
+    transform: scale(1.035);
+}
+
+.maha-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.35) 70%,
+        rgba(0,0,0,.95) 100%
+    );
+}
+
+.maha-image-info {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 28px;
+    z-index: 4;
+}
+
+.maha-image-info span {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #e61823;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.maha-image-info h3 {
+    margin: 0 0 6px;
+
+    font-size: 28px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.maha-image-info p {
+    margin: 0;
+    color: #c7c7c7;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROFILE CONTENT
+========================================================= */
+
+.maha-profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+}
+
+.maha-small-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 16px;
+
+    color: #e61823;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.maha-small-title::before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #e61823;
+}
+
+
+/* NAME */
+
+.maha-profile-content > h2 {
+    margin: 0 0 14px;
+
+    font-size: clamp(40px, 4.4vw, 66px);
+    line-height: .96;
+
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+
+    color: #fff;
+}
+
+.maha-profile-content > h2 strong {
+    display: block;
+    margin-top: 7px;
+
+    color: #e61823;
+    font-weight: 900;
+}
+
+
+/* PRESIDENT TEXT */
+
+.maha-profile-content > h4 {
+    margin: 0 0 20px;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #fff;
+    font-weight: 600;
+}
+
+.maha-intro {
+    margin: 0 0 28px;
+
+    max-width: 650px;
+
+    color: #9f9f9f;
+
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   QUALIFICATION CARD
+========================================================= */
+
+.maha-block {
+    padding: 25px 24px;
+
+    border-radius: 8px;
+
+    background: #141414;
+
+    border: 1px solid #252525;
+
+    box-shadow: 0 14px 32px rgba(0,0,0,.24);
+}
+
+.maha-block h3 {
+    margin: 0 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+
+    color: #fff;
+}
+
+.maha-block h3 i {
+    color: #e61823;
+}
+
+.maha-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 20px;
+}
+
+.maha-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #c8c8c8;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.maha-item i {
+    margin-top: 4px;
+
+    color: #e61823;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.maha-education {
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    border-left: 4px solid #e61823;
+    border-top: 1px solid #242424;
+    border-right: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+}
+
+.maha-education-icon {
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: #e61823;
+}
+
+.maha-education span {
+    display: block;
+    margin-bottom: 3px;
+
+    color: #e61823;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.maha-education h3 {
+    margin: 0 0 3px;
+
+    color: #fff;
+    font-size: 18px;
+}
+
+.maha-education p {
+    margin: 0;
+
+    color: #929292;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT PANEL
+========================================================= */
+
+.maha-achievements {
+    padding: 34px 30px;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    border: 1px solid #252525;
+
+    box-shadow: 0 18px 45px rgba(0,0,0,.34);
+}
+
+.achievement-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #e61823;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.maha-achievements > h3 {
+    margin: 0 0 26px;
+
+    color: #fff;
+
+    font-size: 34px;
+    line-height: 1.15;
+
+    font-weight: 800;
+}
+
+.maha-achievements > h3 strong {
+    color: #e61823;
+}
+
+
+/* =========================================================
+   RECORD CARDS
+========================================================= */
+
+.record-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.record-card {
+    position: relative;
+
+    min-height: 125px;
+
+    padding: 20px 17px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #181818;
+
+    border: 1px solid #292929;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.record-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: #e61823;
+}
+
+.record-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #e61823;
+
+    background: #1c1c1c;
+}
+
+.record-card strong {
+    margin-bottom: 7px;
+
+    color: #e61823;
+
+    font-size: 38px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.record-card span {
+    color: #d0d0d0;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   AWARDS
+========================================================= */
+
+.maha-awards {
+    margin-top: 27px;
+}
+
+.maha-awards h4 {
+    margin: 0 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #fff;
+
+    font-size: 16px;
+}
+
+.maha-awards h4 i {
+    color: #e61823;
+}
+
+.award-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #242424;
+}
+
+.award-item:last-child {
+    border-bottom: 0;
+}
+
+.award-icon {
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #e61823;
+
+    background: rgba(230, 24, 35, 0.08);
+
+    border: 1px solid rgba(230, 24, 35, 0.3);
+}
+
+.award-item strong {
+    display: block;
+    margin-bottom: 3px;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+.award-item span {
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1180px) {
+
+    .maha-profile-container {
+        grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .maha-achievements {
+        grid-column: 1 / -1;
+    }
+
+    .record-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 820px) {
+
+    .maha-profile-section {
+        padding: 70px 16px;
+    }
+
+    .maha-profile-container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .maha-profile-image-wrap,
+    .maha-profile-content,
+    .maha-achievements {
+        grid-column: auto;
+    }
+
+    .maha-profile-image-card {
+        min-height: 520px;
+    }
+
+    .maha-profile-content > h2 {
+        font-size: 42px;
+    }
+
+    .record-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .maha-profile-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .maha-profile-image-card {
+        min-height: 450px;
+    }
+
+    .maha-profile-content > h2 {
+        font-size: 35px;
+    }
+
+    .maha-list {
+        grid-template-columns: 1fr;
+    }
+
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .maha-achievements {
+        padding: 24px 18px;
+    }
+
+    .maha-achievements > h3 {
+        font-size: 28px;
+    }
+
+}
+/* =========================================
+   RECORDS SECTION - MOBILE FIX
+   2 CARDS PER ROW
+========================================= */
+
+@media (max-width: 768px) {
+
+  .maha-profile-section,
+  .records-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .records-grid,
+  .record-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+  }
+
+  .record-card {
+    min-width: 0;
+    width: 100%;
+    padding: 20px 14px;
+    min-height: 145px;
+    border-radius: 8px;
+  }
+
+  .record-card h3,
+  .record-card .record-number {
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .record-card p {
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 0;
+  }
+}
