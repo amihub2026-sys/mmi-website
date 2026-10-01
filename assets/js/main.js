@@ -372,3 +372,178 @@ document.addEventListener("DOMContentLoaded", function () {
 
     video.load();
 });
+
+
+
+/* =====================================================
+   MOBILE HERO AUTO SLIDER
+===================================================== */
+
+const mobileHeroSlider = document.querySelector("#mobileHeroSlider");
+
+if (mobileHeroSlider) {
+
+    const slides = mobileHeroSlider.querySelectorAll(".mobile-hero-slide");
+    const dots = mobileHeroSlider.querySelectorAll(".mobile-slider-dots button");
+
+    let currentSlide = 0;
+    let autoSlider;
+
+
+    function showMobileSlide(index) {
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        dots.forEach((dot) => {
+            dot.classList.remove("active");
+        });
+
+
+        currentSlide = index;
+
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+
+        slides[currentSlide].classList.add("active");
+
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add("active");
+        }
+    }
+
+
+    /* =====================================
+       NEXT SLIDE
+    ===================================== */
+
+    function nextMobileSlide() {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showMobileSlide(currentSlide);
+    }
+
+
+    /* =====================================
+       AUTO PLAY
+    ===================================== */
+
+    function startMobileSlider() {
+
+        clearInterval(autoSlider);
+
+        autoSlider = setInterval(() => {
+
+            if (window.innerWidth <= 768) {
+                nextMobileSlide();
+            }
+
+        }, 4000);
+    }
+
+
+    /* =====================================
+       DOT CLICK
+    ===================================== */
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            showMobileSlide(index);
+
+            startMobileSlider();
+
+        });
+
+    });
+
+
+    /* =====================================
+       SWIPE SUPPORT
+    ===================================== */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    mobileHeroSlider.addEventListener(
+        "touchstart",
+        (event) => {
+
+            touchStartX = event.changedTouches[0].screenX;
+
+        },
+        { passive: true }
+    );
+
+
+    mobileHeroSlider.addEventListener(
+        "touchend",
+        (event) => {
+
+            touchEndX = event.changedTouches[0].screenX;
+
+            handleMobileSwipe();
+
+        },
+        { passive: true }
+    );
+
+
+    function handleMobileSwipe() {
+
+        const swipeDistance = touchStartX - touchEndX;
+
+
+        /* SWIPE LEFT */
+
+        if (swipeDistance > 50) {
+
+            nextMobileSlide();
+
+            startMobileSlider();
+
+        }
+
+
+        /* SWIPE RIGHT */
+
+        if (swipeDistance < -50) {
+
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            showMobileSlide(currentSlide);
+
+            startMobileSlider();
+
+        }
+    }
+
+
+    /* =====================================
+       INITIALIZE
+    ===================================== */
+
+    showMobileSlide(0);
+
+    startMobileSlider();
+
+}
