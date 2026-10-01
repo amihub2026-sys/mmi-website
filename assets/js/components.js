@@ -253,23 +253,7 @@ if (footerContainer) {
                         competitions and upcoming event updates.
                     </p>
 
-                    <form class="newsletter">
-
-                        <input
-                            type="email"
-                            placeholder="Your email"
-                            aria-label="Your email address"
-                            required
-                        >
-
-                        <button
-                            type="submit"
-                            aria-label="Subscribe"
-                        >
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-
-                    </form>
+      
 
                 </div>
 
